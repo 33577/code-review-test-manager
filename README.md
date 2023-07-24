@@ -36,7 +36,7 @@ code-review-test $ ./code-review-test-manager/creator 1 100
         code-review-test/original-code-review-test $ git pull origin add-reservation-service:add-reservation-service
         code-review-test/original-code-review-test $ cd ..
         ```
-    - 아래와 같은 디렉터리 구조여야 한다.
+    - 본 단계를 수행한 이후, 아래와 같은 디렉터리 구조여야 한다.
        ``` 
         - code-review-test
             - original-code-review-test
