@@ -1,0 +1,24 @@
+ORG_NAME=33577-online-challenge
+
+cd original-code-review-test
+git checkout main
+cd ..
+
+cp -R original-code-review-test code-review-test-copy
+cd code-review-test-copy
+
+for i in $(eval echo {$1..$2})
+do
+    REPO=code-review-test-$i
+    BRANCH=add-reservation-service
+
+    git remote remove origin
+    gh repo create $ORG_NAME/$REPO --private --source=. --push
+    git checkout $BRANCH
+    git push --set-upstream origin $BRANCH
+    gh pr create -f
+    git checkout main
+done
+
+cd ..
+rm -rf code-review-test-copy

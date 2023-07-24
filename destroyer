@@ -1,0 +1,7 @@
+ORG_NAME=33577-online-challenge
+
+for i in $(eval echo {$1..$2})
+do
+    REPO=code-review-test-$i
+    gh repo delete $ORG_NAME/$REPO --yes
+done
